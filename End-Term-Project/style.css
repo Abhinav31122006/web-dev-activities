@@ -1,0 +1,209 @@
+/* ==== THEME & GLOBAL STYLES ==== */
+/* These are CSS variables. They let you store colors and fonts in one place! */
+:root {
+    --background-color: #1c1e26;
+    --panel-color: #282a36;
+    --border-color: #44475a;
+    --text-color: #f8f8f2;
+    --primary-accent: #8be9fd;
+    --secondary-accent: #50fa7b;
+    --heading-font: 'Inter', sans-serif;
+}
+
+/* A basic reset to make the site look the same on all browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles that apply to the whole page */
+body {
+    font-family: sans-serif; /* Using a standard, simple font */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+section { padding: 60px 0; } /* Adds space above and below each section */
+img { max-width: 100%; }
+
+/* ==== HEADER / NAVIGATION ==== */
+header {
+    background-color: var(--panel-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex; /* This is flexbox! It helps align items easily. */
+    justify-content: space-between; /* Pushes logo and links to opposite ends */
+    align-items: center; /* Vertically centers them */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-accent);
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* The space between the links */
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+header nav ul a:hover {
+    color: var(--primary-accent); /* A simple color change on hover */
+}
+
+/* ==== HERO SECTION (The intro part) ==== */
+#hero {
+    text-align: center;
+    padding: 80px 0; /* Simple spacing instead of complex calculations */
+}
+
+#hero .tagline {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto; /* Centers the tagline */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--primary-accent);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    opacity: 0.8; /* A simple fade effect on hover */
+}
+
+/* ==== ABOUT ME SECTION ==== */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* This makes the image a circle */
+    object-fit: cover; /* Prevents the image from stretching */
+    border: 4px solid var(--primary-accent);
+}
+
+.skills-container span {
+    display: inline-block;
+    background-color: var(--border-color);
+    color: var(--secondary-accent);
+    padding: 6px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* ==== PROJECTS SECTION ==== */
+#projects {
+    background-color: var(--panel-color);
+}
+
+.projects-grid {
+    display: flex; /* Using flexbox for the project cards */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line on small screens */
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex-basis: 350px; /* Each card will try to be at least 350px wide */
+    flex-grow: 1; /* Allows cards to grow and fill empty space */
+}
+
+.project-card:hover {
+    border-color: var(--primary-accent); /* Simple border color change on hover */
+}
+
+.project-card .tech-stack { font-size: 0.9rem; color: #ccc; }
+
+.project-links a {
+    color: var(--primary-accent);
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+/* ==== CONTACT & FOOTER ==== */
+#contact { text-align: center; }
+#contact p { max-width: 500px; margin: 0 auto 2rem auto; }
+
+footer {
+    background-color: var(--panel-color);
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+}
+
+.social-links a:hover {
+    color: var(--primary-accent);
+}
+
+/* ==== RESPONSIVE DESIGN (for mobile) ==== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    header nav {
+        flex-direction: column; /* Stacks the logo and links vertically */
+        gap: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stacks the image and text vertically */
+        text-align: center;
+    }
+
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+}
